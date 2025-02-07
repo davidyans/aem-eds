@@ -5,6 +5,6 @@
     "/content/aem-eds/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/oshynsite/us/en/QA/sandbox/"
+    "/content/oshynsite/us/en/QA/sandbox/eds-content-page"
   ]
 }
