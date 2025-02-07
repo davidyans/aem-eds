@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-eds/:/",
+    "/content/wknd/language-masters/en/errors/:/wknd/language-masters/en/errors/",,
     "/content/aem-eds/configuration:/.helix/config.json",
     "/content/aem-eds/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-eds/"
+    "/content/wknd/language-masters/en/errors/"
   ]
 }
