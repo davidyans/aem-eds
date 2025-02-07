@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/wknd/language-masters/en/errors/:/wknd/language-masters/en/errors/",,
+    "/content/oshynsite/us/en/QA/sandbox/:/oshynsite/us/en/QA/sandbox/",,
     "/content/aem-eds/configuration:/.helix/config.json",
     "/content/aem-eds/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/wknd/language-masters/en/errors/"
+    "/content/oshynsite/us/en/QA/sandbox/"
   ]
 }
