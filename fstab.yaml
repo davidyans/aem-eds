@@ -1,5 +1,5 @@
 mountpoints:
-  /oshynsite/us/en/QA/sandbox/eds-content-page:
+  /oshynsite/us/en/QA/sandbox:
     url: "https://author-p117752-e1147566.adobeaemcloud.com/bin/franklin.delivery/davidyans/aem-eds/main"
     type: "markup"
     suffix: ".html"
