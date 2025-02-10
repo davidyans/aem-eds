@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://drive.google.com/drive/folders/1rigarRG_shN1PbPvfiRDM0Bk9ISz-4Ze"
+    url: "https://author-p117752-e1147566.adobeaemcloud.com/bin/franklin.delivery/davidyans/aem-eds/main"
     type: "markup"
     suffix: ".html"
