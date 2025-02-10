@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/aem-eds/:/",
-    "/content/aem-eds/configuration:/.helix/config.json",
-    "/content/aem-eds/metadata:/metadata.json"
+    "/content/oshynsite/us/en/QA/sandbox/aem-eds/:/",
+    "/content/oshynsite/us/en/QA/sandbox/aem-eds/configuration:/.helix/config.json",
+    "/content/oshynsite/us/en/QA/sandbox/aem-eds/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/aem-eds/"
+    "/content/oshynsite/us/en/QA/sandbox/aem-eds/"
   ]
 }
