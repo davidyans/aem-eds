@@ -249,6 +249,13 @@
         "value": "",
         "label": "Description",
         "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "foreground_description",
+        "value": "",
+        "label": "Description",
+        "valueType": "string"
       }
     ]
   }
