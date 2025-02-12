@@ -1,0 +1,8 @@
+.block.quote .quoteComponent{
+    background-color: #3b63fb;
+
+    p {
+        justify-content: center;
+        color: red;
+    }
+}
