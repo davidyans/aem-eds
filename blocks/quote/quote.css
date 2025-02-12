@@ -1,4 +1,4 @@
-.block.quote .quoteText {
+.block.quote .text {
     background-color: #3b63fb;
 
     p {
@@ -7,7 +7,7 @@
     }
 }
 
-.block.quote .quoteAuthor {
+.block.quote .author {
     background-color: #3b63fb;
 
     p {

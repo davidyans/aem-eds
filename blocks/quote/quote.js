@@ -1,5 +1,5 @@
 export default function decorate(block) {
-  const [quoteText, quoteAuthor] = block.children;
-  quoteText.className = 'quoteText';
-  quoteAuthor.className = 'quoteAuthor';
+  const [text, author] = block.children;
+  text.className = 'quoteText';
+  author.className = 'quoteAuthor';
 }
