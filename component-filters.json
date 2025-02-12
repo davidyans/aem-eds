@@ -28,7 +28,8 @@
   {
     "id": "columns",
     "components": [
-      "column"
+      "column",
+      "button"
     ]
   },
   {
