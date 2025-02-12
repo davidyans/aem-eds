@@ -1,8 +1,17 @@
-.block.quote .quoteComponent{
+.block.quote .quoteText {
     background-color: #3b63fb;
 
     p {
-        justify-content: center;
+        text-align: center;
         color: red;
+    }
+}
+
+.block.quote .quoteAuthor {
+    background-color: #3b63fb;
+
+    p {
+        text-align: center;
+        color: black;
     }
 }
