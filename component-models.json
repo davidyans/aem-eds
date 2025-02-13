@@ -259,7 +259,7 @@
         "component": "text",
         "valueType": "string",
         "name": "location",
-        "label": "Location (Eg: Quito, Ecuador",
+        "label": "Location (Eg: Quito, Ecuador)",
         "value": ""
       }
     ]
