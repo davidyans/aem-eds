@@ -59,7 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
       forecastHtml += '</div>';
       weatherWrapper.innerHTML += forecastHtml;
-    })
-    .catch((error) => {
     });
 });
