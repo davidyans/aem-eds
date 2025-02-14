@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const locationElement = document.querySelector('[data-aue-prop="location"]');
   const locationName = locationElement ? locationElement.textContent.trim() : null;
 
-  console.error('testingggg: ' + locationName);
+  console.error('testingggg: ', locationName);
 
   if (!locationName) {
     console.error('No se encontró la ubicación en el componente.');
