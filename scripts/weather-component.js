@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
-  const [locationElement] = locationContainer.children;
+  const [locationElement] = locationContainer.querySelector('p');
 
   const locationName = locationElement ? locationElement.textContent.trim() : null;
 
