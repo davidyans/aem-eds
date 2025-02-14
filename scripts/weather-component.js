@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  const locationElement = document.querySelector('[data-aue-prop="location"]');
+  const locationContainer = document.querySelector('.weather-comp-subcontainer');
+  const [locationElement] = locationContainer.children;
+
   const locationName = locationElement ? locationElement.textContent.trim() : null;
 
   console.error('testingggg: ', locationName);
