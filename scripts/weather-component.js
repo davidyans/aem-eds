@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const locationElement = document.querySelector('[data-aue-prop="location"]');
   const locationName = locationElement ? locationElement.textContent.trim() : null;
 
-  console.error("testingggg")
+  console.error('testingggg');
 
   if (!locationName) {
     console.error('No se encontró la ubicación en el componente.');
@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const geocodingUrl = `https://geocoding-api.open-meteo.com/v1/search?name=${encodeURIComponent(locationName)}&count=1&language=en&format=json`;
 
   fetch(geocodingUrl)
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Error en la respuesta de la API de geocodificación.');
       }
       return response.json();
     })
-    .then(geoData => {
+    .then((geoData) => {
       if (!geoData.results || geoData.results.length === 0) {
         throw new Error('No se encontraron resultados de geocodificación para la ubicación proporcionada.');
       }
@@ -28,13 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
       return fetch(weatherUrl);
     })
-    .then(response => {
+    .then((response) => {
       if (!response.ok) {
         throw new Error('Error en la respuesta de la API de pronóstico del tiempo.');
       }
       return response.json();
     })
-    .then(weatherData => {
+    .then((weatherData) => {
       const weatherWrapper = document.querySelector('.weather-wrapper');
 
       if (!weatherWrapper) {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
       forecastHtml += '</div>';
       weatherWrapper.innerHTML += forecastHtml;
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error al obtener la información meteorológica:', error);
     });
 });
