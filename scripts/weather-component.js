@@ -1,6 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
-  const [locationElement] = locationContainer.querySelector('p');
+
+  if (!locationContainer) {
+    console.error('No se encontró .weather-comp-subcontainer en el DOM.');
+    return;
+  }
+
+  const locationElement = locationContainer.querySelector('p:not([class])');
+
+  if (locationElement) {
+    console.log('Ubicación encontrada:', locationElement.textContent);
+  } else {
+    console.log('No se encontró un <p> sin clase dentro del contenedor.');
+  }
 
   const locationName = locationElement ? locationElement.textContent.trim() : null;
 
