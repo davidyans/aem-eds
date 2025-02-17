@@ -1,4 +1,4 @@
-window.addEventListener('load', () => {
+document.addEventListener('aue:ready', () => {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
 
   if (!locationContainer) {
