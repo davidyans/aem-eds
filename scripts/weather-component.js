@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
 
   if (!locationContainer) {
