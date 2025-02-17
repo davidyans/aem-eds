@@ -1,22 +1,21 @@
-document.addEventListener('DOMContentLoaded', () => {
+function handleWeatherComponent() {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
 
   if (!locationContainer) {
-    console.error('No se encontró .weather-comp-subcontainer en el DOM.');
+    console.warn('Esperando a que .weather-comp-subcontainer aparezca en el DOM...');
     return;
   }
 
   const locationElement = locationContainer.querySelector('p:not([class])');
 
-  if (locationElement) {
-    console.log('Ubicación encontrada:', locationElement.textContent);
-  } else {
-    console.log('No se encontró un <p> sin clase dentro del contenedor.');
+  if (!locationElement) {
+    console.warn('No se encontró un <p> sin clase dentro del contenedor.');
+    return;
   }
 
-  const locationName = locationElement ? locationElement.textContent.trim() : null;
+  const locationName = locationElement.textContent.trim();
 
-  console.error('testingggg: ', locationName);
+  console.log('Ubicación encontrada:', locationName);
 
   if (!locationName) {
     console.error('No se encontró la ubicación en el componente.');
@@ -80,4 +79,13 @@ document.addEventListener('DOMContentLoaded', () => {
     .catch((error) => {
       console.error('Error al obtener la información meteorológica:', error);
     });
+}
+
+const observer = new MutationObserver(() => {
+  if (document.querySelector('.weather-comp-subcontainer')) {
+    observer.disconnect();
+    handleWeatherComponent();
+  }
 });
+
+observer.observe(document.body, { childList: true, subtree: true });
