@@ -1,7 +1,10 @@
 export default function decorate(block) {
-  const [title] = block.children;
-  title.className = 'weather-comp-container';
+  const [container] = block.children;
+  container.className = 'weather-comp-container';
 
-  const [subcontainer] = title.children;
+  const [subcontainer] = container.children;
   subcontainer.className = 'weather-comp-subcontainer';
+
+  const title = container.children;
+  title.className = 'location';
 }
