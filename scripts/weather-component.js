@@ -56,19 +56,19 @@ function handleWeatherComponent() {
         <div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/index/jcr:content/root/section_0/block_549938529" data-aue-type="component">
       `;
       dailyForecasts.time.forEach((date, index) => {
-      forecastHtml += `
-        <div class="forecast-day" data-aue-type="component" data-aue-label='Forecast Day ${index + 1}'>
-          <h3>${date}</h3>
-          <p>Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
-          <p>Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
-          <p>Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
-          <p>Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
-          <p>Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
-          <p>Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
-          <p>Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
-          <p>Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
-        </div>
-      `;
+        forecastHtml +=
+          <div class="forecast-day">
+            <h3>${dailyForecasts.time[index]}</h3>
+            <p>Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
+            <p>Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
+            <p>Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
+            <p>Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
+            <p>Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
+            <p>Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
+            <p>Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
+            <p>Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
+          </div>
+        ;
       });
 
       forecastHtml += `</div>`;
