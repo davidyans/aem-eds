@@ -1,12 +1,5 @@
 function handleWeatherComponent() {
-  const locationContainer = document.querySelector('.weather-comp-subcontainer');
-
-  if (!locationContainer) {
-    console.warn('weather-comp-subcontainer not founded in DOM...');
-    return;
-  }
-
-  const locationElement = locationContainer.querySelector('p:not([class])');
+  const locationElement = document.querySelector('.weather-comp-location');
 
   if (!locationElement) {
     console.warn('No se encontró un <p> sin clase dentro del contenedor.');
