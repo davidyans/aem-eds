@@ -52,11 +52,11 @@ function handleWeatherComponent() {
       }
 
       const dailyForecasts = weatherData.daily;
-      let forecastHtml = '<div class="weather-forecast">';
+      let forecastHtml = '<div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast" data-aue-type="container">';
 
       dailyForecasts.time.forEach((date, index) => {
         forecastHtml += `
-          <div class="forecast-day" data-aue-type="container" data-aue-label="Forecast Day">
+          <div class="forecast-day" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast/day_${index}" data-aue-type="component" data-aue-label="Forecast Day">
             <h3 data-aue-prop="date" data-aue-label="Date" data-aue-type="text">${dailyForecasts.time[index]}</h3>
             <p data-aue-prop="temperature_max" data-aue-label="Maximum Temperature" data-aue-type="text">Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
             <p data-aue-prop="temperature_min" data-aue-label="Minimum Temperature" data-aue-type="text">Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
@@ -67,10 +67,10 @@ function handleWeatherComponent() {
             <p data-aue-prop="wind_speed_max" data-aue-label="Maximum Wind Speed" data-aue-type="text">Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
             <p data-aue-prop="wind_gusts_max" data-aue-label="Maximum Wind Gusts" data-aue-type="text">Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
           </div>
-        `;
+    `;
       });
 
-      forecastHtml += '</div>';
+      forecastHtml += `</div>`;
       weatherWrapper.innerHTML += forecastHtml;
     })
     .catch((error) => {
