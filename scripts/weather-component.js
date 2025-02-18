@@ -52,7 +52,7 @@ function handleWeatherComponent() {
       }
 
       const dailyForecasts = weatherData.daily;
-      let forecastHtml = `<div class="weather-forecast">`;
+      let forecastHtml = `<div class='weather-forecast'>`;
 
       dailyForecasts.time.forEach((date, index) => {
         forecastHtml += `
@@ -67,8 +67,7 @@ function handleWeatherComponent() {
             <p>Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
             <p>Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
           </div>
-        `
-        ;
+        `;
       });
 
       forecastHtml += `</div>`;
