@@ -2,7 +2,7 @@ function handleWeatherComponent() {
   const locationElement = document.querySelector('.weather-comp-location');
 
   if (!locationElement) {
-    console.warn('No se encontró un <p> sin clase dentro del contenedor.');
+    console.warn('Could not found location.');
     return;
   }
 
