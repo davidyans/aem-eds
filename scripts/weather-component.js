@@ -52,11 +52,10 @@ function handleWeatherComponent() {
       }
 
       const dailyForecasts = weatherData.daily;
-      let forecastHtml = `
-        <div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/index/jcr:content/root/section_0/block_549938529" data-aue-type="component">
-      `;
+      let forecastHtml = `<div class="weather-forecast">`;
+
       dailyForecasts.time.forEach((date, index) => {
-        forecastHtml +=
+        forecastHtml += `
           <div class="forecast-day">
             <h3>${dailyForecasts.time[index]}</h3>
             <p>Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
@@ -68,6 +67,7 @@ function handleWeatherComponent() {
             <p>Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
             <p>Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
           </div>
+        `
         ;
       });
 
