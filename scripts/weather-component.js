@@ -56,16 +56,20 @@ function handleWeatherComponent() {
 
       dailyForecasts.time.forEach((date, index) => {
         forecastHtml += `
-          <div class="forecast-day" data-aue-type="container" data-aue-label="Forecast Day">
-            <h3 data-aue-prop="date" data-aue-label="Date" data-aue-type="text">${dailyForecasts.time[index]}</h3>
-            <p data-aue-prop="temperature_max" data-aue-label="Maximum Temperature" data-aue-type="text">Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
-            <p data-aue-prop="temperature_min" data-aue-label="Minimum Temperature" data-aue-type="text">Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
-            <p data-aue-prop="sunrise" data-aue-label="Sunrise" data-aue-type="text">Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
-            <p data-aue-prop="sunset" data-aue-label="Sunset" data-aue-type="text">Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
-            <p data-aue-prop="precipitation_sum" data-aue-label="Precipitation" data-aue-type="text">Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
-            <p data-aue-prop="precipitation_hours" data-aue-label="Precipitation Hours" data-aue-type="text">Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
-            <p data-aue-prop="wind_speed_max" data-aue-label="Maximum Wind Speed" data-aue-type="text">Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
-            <p data-aue-prop="wind_gusts_max" data-aue-label="Maximum Wind Gusts" data-aue-type="text">Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
+          <div data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast" data-aue-type="container" class="forecast-container">
+            ${dailyForecasts.time.map((date, index) => `
+              <div data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast/day_${index}" data-aue-type="component" class="forecast-day">
+                <p data-aue-prop="date" data-aue-type="text">${dailyForecasts.time[index]}</p>
+                <p data-aue-prop="temperature_max" data-aue-type="text">Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
+                <p data-aue-prop="temperature_min" data-aue-type="text">Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
+                <p data-aue-prop="sunrise" data-aue-type="text">Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
+                <p data-aue-prop="sunset" data-aue-type="text">Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
+                <p data-aue-prop="precipitation_sum" data-aue-type="text">Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
+                <p data-aue-prop="precipitation_hours" data-aue-type="text">Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
+                <p data-aue-prop="wind_speed_max" data-aue-type="text">Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
+                <p data-aue-prop="wind_gusts_max" data-aue-type="text">Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
+              </div>
+            `).join('')}
           </div>
         `;
       });
