@@ -44,7 +44,7 @@ function handleWeatherComponent() {
       return response.json();
     })
     .then((weatherData) => {
-      const weatherWrapper = document.querySelector('.weather-comp-container');
+      const weatherWrapper = document.querySelector('.weather-wrapper');
 
       if (!weatherWrapper) {
         console.error('Could not found weather container.');
@@ -52,23 +52,25 @@ function handleWeatherComponent() {
       }
 
       const dailyForecasts = weatherData.daily;
-      let forecastHtml = '<div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/index/jcr:content/root/section_0/block_549938529" data-aue-type="container">';
-
-      dailyForecasts.time.forEach((date, index) => {
-        forecastHtml += `
-          <div class="forecast-day" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast/day_${index}" data-aue-type="component" data-aue-label="Forecast Day">
-            <h3 data-aue-prop="date" data-aue-label="Date" data-aue-type="text">${dailyForecasts.time[index]}</h3>
-            <p data-aue-prop="temperature_max" data-aue-label="Maximum Temperature" data-aue-type="text">Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
-            <p data-aue-prop="temperature_min" data-aue-label="Minimum Temperature" data-aue-type="text">Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
-            <p data-aue-prop="sunrise" data-aue-label="Sunrise" data-aue-type="text">Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
-            <p data-aue-prop="sunset" data-aue-label="Sunset" data-aue-type="text">Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
-            <p data-aue-prop="precipitation_sum" data-aue-label="Precipitation" data-aue-type="text">Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
-            <p data-aue-prop="precipitation_hours" data-aue-label="Precipitation Hours" data-aue-type="text">Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
-            <p data-aue-prop="wind_speed_max" data-aue-label="Maximum Wind Speed" data-aue-type="text">Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
-            <p data-aue-prop="wind_gusts_max" data-aue-label="Maximum Wind Gusts" data-aue-type="text">Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
-          </div>
+      let forecastHtml = `
+  <div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/forecast" data-aue-type="container">
     `;
-      });
+
+          dailyForecasts.time.forEach((date, index) => {
+            forecastHtml += `
+          <div class="forecast-day" data-aue-type="component" data-aue-label="Forecast Day ${index + 1}">
+            <h3 data-aue-prop="date_${index}" data-aue-type="text" data-aue-label="Date">${date}</h3>
+            <p data-aue-prop="temperature_max_${index}" data-aue-type="text" data-aue-label="Maximum Temperature">Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
+            <p data-aue-prop="temperature_min_${index}" data-aue-type="text" data-aue-label="Minimum Temperature">Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
+            <p data-aue-prop="sunrise_${index}" data-aue-type="text" data-aue-label="Sunrise">Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
+            <p data-aue-prop="sunset_${index}" data-aue-type="text" data-aue-label="Sunset">Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
+            <p data-aue-prop="precipitation_sum_${index}" data-aue-type="text" data-aue-label="Precipitation">Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
+            <p data-aue-prop="precipitation_hours_${index}" data-aue-type="text" data-aue-label="Precipitation Hours">Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
+            <p data-aue-prop="wind_speed_max_${index}" data-aue-type="text" data-aue-label="Maximum Wind Speed">Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
+            <p data-aue-prop="wind_gusts_max_${index}" data-aue-type="text" data-aue-label="Maximum Wind Gusts">Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
+          </div>
+        `;
+          });
 
       forecastHtml += `</div>`;
       weatherWrapper.innerHTML += forecastHtml;
