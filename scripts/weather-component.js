@@ -53,8 +53,8 @@ function handleWeatherComponent() {
 
       const dailyForecasts = weatherData.daily;
       let forecastHtml = `
-  <div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/index/jcr:content/root/section_0/block_549938529" data-aue-type="container">
-    `;
+        <div class="weather-forecast" data-aue-resource="urn:aemconnection:/content/oshynsite/us/en/QA/sandbox/aem-eds/index/jcr:content/root/section_0/block_549938529" data-aue-type="component">
+      `;
       dailyForecasts.time.forEach((date, index) => {
       forecastHtml += `
         <div class="forecast-day" data-aue-type="component" data-aue-label='Forecast Day ${index + 1}'>
