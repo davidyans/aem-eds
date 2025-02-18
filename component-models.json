@@ -261,13 +261,6 @@
         "name": "location",
         "label": "Location (Eg: Quito, Ecuador)",
         "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "locationId",
-        "label": "Location component id",
-        "value": "weatherComponent"
       }
     ]
   }
