@@ -27,13 +27,13 @@ function handleWeatherComponent() {
   fetch(geocodingUrl)
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Error en la respuesta de la API de geocodificación.');
+        throw new Error('Error on geocoding API response.');
       }
       return response.json();
     })
     .then((geoData) => {
       if (!geoData.results || geoData.results.length === 0) {
-        throw new Error('No se encontraron resultados de geocodificación para la ubicación proporcionada.');
+        throw new Error('Could not found geocoding info.');
       }
 
       const { latitude, longitude } = geoData.results[0];
@@ -43,7 +43,7 @@ function handleWeatherComponent() {
     })
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Error en la respuesta de la API de pronóstico del tiempo.');
+        throw new Error('Error on weather API response.');
       }
       return response.json();
     })
@@ -51,7 +51,7 @@ function handleWeatherComponent() {
       const weatherWrapper = document.querySelector('.weather-wrapper');
 
       if (!weatherWrapper) {
-        throw new Error('No se encontró el contenedor para mostrar la información meteorológica.');
+        throw new Error('Could not found weather container.');
       }
 
       const dailyForecasts = weatherData.daily;
@@ -61,14 +61,14 @@ function handleWeatherComponent() {
         forecastHtml += `
           <div class="forecast-day">
             <h3>${dailyForecasts.time[index]}</h3>
-            <p>Temperatura Máxima: ${dailyForecasts.temperature_2m_max[index]}°C</p>
-            <p>Temperatura Mínima: ${dailyForecasts.temperature_2m_min[index]}°C</p>
-            <p>Amanecer: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
-            <p>Atardecer: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
-            <p>Precipitación: ${dailyForecasts.precipitation_sum[index]} mm</p>
-            <p>Horas de Precipitación: ${dailyForecasts.precipitation_hours[index]} h</p>
-            <p>Velocidad Máxima del Viento: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
-            <p>Ráfagas Máximas de Viento: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
+            <p>Maximum Temperature: ${dailyForecasts.temperature_2m_max[index]}°C</p>
+            <p>Minimum Temperature: ${dailyForecasts.temperature_2m_min[index]}°C</p>
+            <p>Sunrise: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
+            <p>Sunset: ${new Date(dailyForecasts.sunset[index]).toLocaleTimeString()}</p>
+            <p>Precipitation: ${dailyForecasts.precipitation_sum[index]} mm</p>
+            <p>Precipitation Hours: ${dailyForecasts.precipitation_hours[index]} h</p>
+            <p>Maximum Wind Speed: ${dailyForecasts.wind_speed_10m_max[index]} km/h</p>
+            <p>Maximum Wind Gusts: ${dailyForecasts.wind_gusts_10m_max[index]} km/h</p>
           </div>
         `;
       });
@@ -77,7 +77,7 @@ function handleWeatherComponent() {
       weatherWrapper.innerHTML += forecastHtml;
     })
     .catch((error) => {
-      console.error('Error al obtener la información meteorológica:', error);
+      console.error('Error obtaining info:', error);
     });
 }
 
