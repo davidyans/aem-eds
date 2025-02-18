@@ -41,7 +41,7 @@ function handleWeatherComponent() {
       return response.json();
     })
     .then((weatherData) => {
-      const weatherWrapper = document.querySelector('.weather-wrapper');
+      const weatherWrapper = document.querySelector('.weather');
 
       if (!weatherWrapper) {
         console.error('Could not found weather container.');
