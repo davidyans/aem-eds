@@ -87,4 +87,4 @@ const observer = new MutationObserver(() => {
   }
 });
 
-observer.observe(document.body, { attributes: true , childList: true, subtree: true });
+observer.observe(document.body, { attributes: true, childList: true, subtree: true });
