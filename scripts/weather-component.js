@@ -83,7 +83,6 @@ function handleWeatherComponent() {
 
 const observer = new MutationObserver(() => {
   if (document.querySelector('.weather-comp-subcontainer')) {
-    observer.disconnect();
     handleWeatherComponent();
   }
 });
