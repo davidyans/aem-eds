@@ -27,13 +27,13 @@ function handleWeatherComponent() {
   fetch(geocodingUrl)
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Error on geocoding API response.');
+        console.error('Error on geocoding API response.');
       }
       return response.json();
     })
     .then((geoData) => {
       if (!geoData.results || geoData.results.length === 0) {
-        throw new Error('Could not found geocoding info.');
+        console.error('Could not found geocoding info.');
       }
 
       const { latitude, longitude } = geoData.results[0];
@@ -43,7 +43,7 @@ function handleWeatherComponent() {
     })
     .then((response) => {
       if (!response.ok) {
-        throw new Error('Error on weather API response.');
+        console.error('Error on weather API response.');
       }
       return response.json();
     })
@@ -51,7 +51,7 @@ function handleWeatherComponent() {
       const weatherWrapper = document.querySelector('.weather-wrapper');
 
       if (!weatherWrapper) {
-        throw new Error('Could not found weather container.');
+        console.error('Could not found weather container.');
       }
 
       const dailyForecasts = weatherData.daily;
