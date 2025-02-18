@@ -2,7 +2,7 @@ function handleWeatherComponent() {
   const locationElement = document.querySelector('.weather-comp-location');
 
   if (!locationElement) {
-    console.warn('Could not found location.');
+    console.warn('Could not found  element.');
     return;
   }
 
@@ -11,7 +11,7 @@ function handleWeatherComponent() {
   console.log('Location found:', locationName);
 
   if (!locationName) {
-    console.error('No se encontró la ubicación en el componente.');
+    console.error('Could not found location.');
     return;
   }
 
