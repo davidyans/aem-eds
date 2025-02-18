@@ -2,7 +2,7 @@ function handleWeatherComponent() {
   const locationContainer = document.querySelector('.weather-comp-subcontainer');
 
   if (!locationContainer) {
-    console.warn('Esperando a que .weather-comp-subcontainer aparezca en el DOM...');
+    console.warn('weather-comp-subcontainer not founded in DOM...');
     return;
   }
 
@@ -15,7 +15,7 @@ function handleWeatherComponent() {
 
   const locationName = locationElement.textContent.trim();
 
-  console.log('Ubicación encontrada:', locationName);
+  console.log('Location found:', locationName);
 
   if (!locationName) {
     console.error('No se encontró la ubicación en el componente.');
