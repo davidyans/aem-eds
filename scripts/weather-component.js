@@ -21,14 +21,14 @@ function handleWeatherComponent() {
     .then((response) => {
       if (!response.ok) {
         console.error('Error on geocoding API response.');
-        return;
+        return null;
       }
       return response.json();
     })
     .then((geoData) => {
       if (!geoData.results || geoData.results.length === 0) {
         console.error('Could not found geocoding info.');
-        return;
+        return null;
       }
 
       const { latitude, longitude } = geoData.results[0];
@@ -39,7 +39,7 @@ function handleWeatherComponent() {
     .then((response) => {
       if (!response.ok) {
         console.error('Error on weather API response.');
-        return;
+        return null;
       }
       return response.json();
     })
