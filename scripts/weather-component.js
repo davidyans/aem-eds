@@ -60,7 +60,7 @@ function handleWeatherComponent() {
       dailyForecasts.time.forEach((date, index) => {
         forecastHtml += `
           <div class="forecast-day">
-            <h3>${new Date(date).toString()}</h3>
+            <h3>${dailyForecasts.time[index]}</h3>
             <p>Temperatura Máxima: ${dailyForecasts.temperature_2m_max[index]}°C</p>
             <p>Temperatura Mínima: ${dailyForecasts.temperature_2m_min[index]}°C</p>
             <p>Amanecer: ${new Date(dailyForecasts.sunrise[index]).toLocaleTimeString()}</p>
