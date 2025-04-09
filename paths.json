@@ -1,6 +1,6 @@
 {
   "mappings": [
-    "/content/oshynsite/us/en/QA/sandbox/aem-eds/:/tests",
+    "/content/oshynsite/us/en/QA/sandbox/aem-eds/:/",
     "/content/oshynsite/us/en/QA/sandbox/aem-eds/configuration:/.helix/config.json",
     "/content/oshynsite/us/en/QA/sandbox/aem-eds/metadata:/metadata.json"
   ],
